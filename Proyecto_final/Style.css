@@ -1,0 +1,661 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    cursor: crosshair;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    --verde: #1B4E3D;
+    --negro: #000000;
+    --blanco: #FFFFFF;
+    --gris: #F5F5F5;
+}
+
+/*Barra de navegación*/
+.navbar{
+    padding: 0.3rem 1rem;
+   background-color: var(--verde);
+    box-shadow: 0px 1px 4px 1px black;
+}
+
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-navbar {
+    height: 90px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.logo-navbar:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 767px){
+    .navbar-brand{
+        display: none;
+    }
+}
+/*Sección Hero*/
+.hero {
+    min-height: 70vh; /* 🔥 menos alto = menos vacío */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+}
+
+.hero-contenido {
+    text-align: center;
+    max-width: 500px;
+}
+
+.hero-imagen-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 5px solid var(--verde); /* Un pequeño marco para que resalte */
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    white-space: nowrap;
+}
+
+.hero-subtitulo {
+    font-size: 1.1rem;
+    margin: 0; /* 🔥 quita aire innecesario */
+    color: #666;
+}
+
+/*Estilos generales*/
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+.hero_principal{
+    padding: 3rem;
+}
+
+.hero-imagen-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px;
+    object-fit: cover;
+}
+
+.hero-principal h2{
+    font-size: 1.5rem;
+    color: cadetblue;
+}
+
+@media screen and (min-width: 700px) { 
+    .hero-imagen-inferior{
+        max-width: 600px;
+    }
+}
+
+.seccion-oscura{
+    width: 100%;
+    color: aliceblue;
+    background-color: black;
+}
+
+/*Seccion About me*/
+.sobre-mi{
+    height: 500px;
+    padding: 10px;
+}
+
+.contenedor {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.seccion-titulo {
+    font-size: 2.2rem;
+    font-family: "Anton", sans-serif;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.seccion-titulo::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: white;
+    margin-top: 8px;
+}
+
+.seccion-texto {
+    font-size: 1.1rem;
+    line-height: 1.8; /* 🔥 aire entre líneas */
+    color: #ccc; /* blanco suave, no tan duro */
+    text-align: left;
+}
+
+.seccion-clara{
+    color: black;
+    background-color: var(--gris);
+}
+
+/* Experiencia */
+.experiencia{
+    padding: 40px 40px 60px 40px;
+}
+
+
+.experiencia-titulo {
+    font: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.experiencia i{
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    background-color: rgb(27, 78, 61);
+    padding: 8px 19px;
+    border-radius: 50px;
+
+}
+
+.badges-contenedor{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.badge {
+    margin: 5px;
+    background-color: var(--verde) !important;
+}
+
+.experiencia .columna {
+    padding: 30px;
+    border-radius: 15px; /* Bordes suaves */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease; /* Corregido el guion */
+}
+
+.experiencia .columna:hover {
+    color: var(--blanco);
+    background-color: var(--negro);
+    transform: translateY(-10px); /* Efecto de levitación */
+}
+
+/*Proyectos*/
+
+.proyectos-recientes{
+    padding: 40px;
+}
+
+.texto-negro{
+    color: black;
+}
+
+.texto-blanco{
+    color: white;
+}
+
+.seccio-descripcion{
+    font-size: 1.2rem;
+    color: burlywood;
+}
+
+.proyectos-recientes img {
+    height: auto;
+    width: 100%;
+    padding: 0; /* Quitamos padding para que el overlay calce perfecto */
+    border-radius: 15px; /* Corregido de 10pz a 15px */
+    transition: transform 0.5s ease;
+}
+
+.proyectos-contenedor{
+    padding-top: 60px;
+    margin-bottom: 40px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transform: scale(0.95); /* 🔥 AQUÍ */
+    transition: all 0.4s ease-in-out;
+
+    padding: 20px;
+    text-align: center;
+}
+
+.overlay p{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0;
+
+}
+
+.proyecto:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.proyecto:hover .overlay {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.proyecto:hover img{
+    opacity: 0.2;
+}
+
+.proyecto {
+    position: relative; /* Clave: necesario para posicionar el overlay dentro */
+    overflow: hidden;   /* Importante: para que la imagen no se salga al escalar */
+    border-radius: 15px; /* Bordes suaves, corregido de "10pz" */
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.proyecto-titulo {
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem); /* Un pelín más pequeño para que respire */
+    font-weight: 400; /* Anton es single-weight, 400 es su peso nativo */
+    color: #000000; /* Blanco puro, sin transparencias */
+    margin: 0;
+    font-family: "Anton", sans-serif;
+    text-transform: uppercase;
+   letter-spacing: normal;
+}
+
+.proyecto-titulo::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: black;
+    margin: 8px auto;
+}
+
+.proyecto-categoria {
+    font-size: 0.95rem; /* Un poco más pequeño para jerarquía */
+    color: rgba(0, 0, 0, 0.85); /* Un blanco muy ligeramente transparente para que no compita */
+    margin: 5px 0 15px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400; /* Peso normal para legibilidad */
+}
+
+.overlay .iconos-contenedor{
+    display: flex;
+}
+
+.overlay i{
+    color: black;
+    font-size: 60px;
+    margin: 10px;
+}
+
+.proyecto img {
+    height: auto;
+    width: 100%;
+    padding: 0;          /* Quitamos padding para que el overlay calce perfecto */
+    display: block;      /* Elimina espacios en blanco bajo la imagen */
+    transition: transform 0.5s ease; /* Transición para el zoom */
+    filter: grayscale(0%);
+}
+
+.proyecto:hover img {
+    transform: scale(1.1);
+    filter: grayscale(100%);
+}
+
+/*Adaptable responsivo*/
+@media screen and (max-width: 768px) {
+    .proyecto-titulo {
+        font-size: 1.2rem;
+    }
+    .proyecto-categoria {
+        font-size: 0.9rem;
+    }
+    .overlay i {
+        font-size: 2rem;
+    }
+}
+
+.overlay i {
+    color: black;
+    font-size: 2.5rem;
+    transition: transform 0.2s ease;
+}
+
+.overlay a:hover i {
+    transform: scale(1.1); /* Efecto hover en el icono */
+}
+
+.btn-info {
+    background-color: var(--verde);
+    border: none;
+    color: var(--blanco);
+}
+
+.btn-info:hover {
+    background-color: black;
+    color: var(--blanco);
+}
+
+.articulos {
+    min-height: 500px;
+    padding: 30px;
+}
+
+.articulos .card{
+    width: 80%;
+    max-width: 600px;
+    margin: 20px;
+}
+
+.articulos .card-header{
+    font-weight: bold;
+}
+
+.comentarios{
+    padding: 40px 40px 80px 40px;
+}
+
+.comentarios .carousel{
+    max-width: 800px;
+}
+
+.carousel-item{
+    height: 500px;
+}
+
+.carousel-item .container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comentario-imagen{
+    height: 150px;
+    width: 150px;
+    margin: 10px 10px 20px 10px;
+}
+
+.comentario-texto{
+    max-width: 70%;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.comentario-info{
+    font-weight: bold;
+    text-align: center;
+}
+
+.comentario-info p{
+    margin-bottom: 0;
+}
+
+.comentario-footer .cliente{
+    font-size: 1.2rem;
+}
+
+.comentario-footer .cargo{
+    font-size: 0.9rem;
+    color: darkslategrey;
+}
+
+@media screen and (max-width: 800px) {
+    .comentario-imagen {
+        height: 120px;
+        width: 120px;
+    }
+
+    .comentario-texto{
+        font-size: 18px;
+    }
+}
+
+/*Contacto*/
+
+.contacto .container {
+    max-width: 1100px;
+    min-height: 200px;
+    padding: 20px;
+}
+
+.contacto .rectangulo {
+    margin-top: -5rem;
+    background-color: rgb(27, 78, 61);
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px 1px black;
+}
+
+.contacto .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+text-align: center;
+}
+
+.contacto .descripcion {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+}
+
+.contacto button { 
+    color: aliceblue;
+    font-weight: 500;
+
+    background-color: transparent;
+    border: 1.5px solid white;
+
+    padding: 0.6em 1.4em;
+
+    margin: 10px 10px 10px 40px; /* 🔥 AQUÍ está la separación real */
+
+    border-radius: 40px;
+    font-size: 0.9rem;
+
+    transition: all 0.3s ease; 
+}
+
+.contacto button:hover { 
+    background-color: white;
+    color: black;
+    transform: translateY(-2px); /* 🔥 efecto elegante */
+}
+
+.contacto button i {
+    color: aliceblue;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover i {
+    color: black;
+}
+
+
+/*Pie de p{agina (footer)*/
+.footer {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.footer-icono { 
+    height: 87px;
+    width: 80px;
+    margin: 10px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.footer-icono:hover {
+    transform: scale(1.1);
+}
+
+.footer-texto { 
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.iconos-redes-sociales a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid rgb(3, 140, 106);
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales i {
+    color: rgb(255, 255, 255); /* verde que ya usas */
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover i {
+    color: white;
+}
+
+.iconos-redes-sociales a:hover {
+    background-color: rgb(27, 78, 61);
+}
+
+
+.iconos-redes-sociales a:hover i {
+    color: rgb(255, 255, 255);
+}
+
+.derechos-de-autor {
+    font-size:  15px;
+    color: antiquewhite;
+    padding: 20px;
+}
+
+.frase {
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    border-top: 3px solid rgb(27, 78, 61);
+    border-bottom: 3px solid rgb(27, 78, 61);
+    position: relative;
+}
+
+.frase-track {
+    display: flex;
+    width: max-content;
+    animation: scrollInfinito 20s linear infinite;
+}
+
+.frase-track p {
+    font-size: 2.5rem;
+    font-family: "Anton", sans-serif;
+    white-space: nowrap;
+    padding: 40px 0;
+    color: transparent;
+    -webkit-text-stroke: 1px white; /* 🔥 contorno */
+    letter-spacing: 3px;
+}
+
+.stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.fill {
+    color: white;
+    margin-left: 50px;
+}
+
+.frase::before,
+.frase::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+}
+
+.frase::before {
+    left: 0;
+    background: linear-gradient(to right, black, transparent);
+}
+
+.frase::after {
+    right: 0;
+    background: linear-gradient(to left, black, transparent);
+}
+
+/* Animación infinita continua */
+@keyframes scrollInfinito {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+button {
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
